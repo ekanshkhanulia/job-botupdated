@@ -85,7 +85,7 @@ async def upload_resume(file:UploadFile=File(...)):  # async = handler can pause
         raw=parse_resume(UPLOAD_PATH)
         validated=validate_parsed_resume(raw) #fuction iside the resume_parse.py
         save_parsed_resume(validated)
-        rag_result = ingest_resume()
+        rag_result = ingest_resume("default")
         return {
             "message": "Resume uploaded and parsed successfully",
             "data": validated,

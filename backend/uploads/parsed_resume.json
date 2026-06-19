@@ -1,0 +1,92 @@
+{
+  "full_name": "Ekansh Khanulia",
+  "email": "",
+  "phone": "+31683848085",
+  "location": "Leiden, Netherlands",
+  "linkedin_url": "",
+  "github_url": "",
+  "portfolio_url": "",
+  "other_urls": [],
+  "summary": "",
+  "skills": [
+    "Python",
+    "C++",
+    "SQL",
+    "NumPy",
+    "Power BI",
+    "TensorFlow",
+    "Excel",
+    "Power Point",
+    "PyTorch",
+    "Matplotlib",
+    "Reinforcement Learning",
+    "AC",
+    "A2C",
+    "PPO",
+    "SAC",
+    "Prompt Engineering",
+    "Time-Series",
+    "Predictive Modeling",
+    "NLP",
+    "LLM",
+    "LAM",
+    "Model Evaluation",
+    "Agentic AI",
+    "Gen AI",
+    "Information Retrieval",
+    "API Integration",
+    "CNN",
+    "Analytical Thinking",
+    "Communication",
+    "Documentation",
+    "Version Control (Git)",
+    "Problem Solving",
+    "Adaptability",
+    "Creative thinking"
+  ],
+  "languages": [],
+  "education": [
+    {
+      "degree": "Master of Science",
+      "field": "Computer Science (specialization in Data Science)",
+      "institution": "Leiden University",
+      "graduation_year": "",
+      "gpa": ""
+    },
+    {
+      "degree": "Bachelor of Technology",
+      "field": "Computer Science",
+      "institution": "Graphic Era Hill University",
+      "graduation_year": "2023",
+      "gpa": "8"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Summer Trainee",
+      "company": "Defence Research and Development Organization, DEAL",
+      "duration": "June 2023 – Aug 2023",
+      "description": "• Built a real-time facial recognition and drowsiness detection system for monitoring staff alertness at the DRDO facility.\n• Engineered an integrated pipeline using OpenCV, dlib, and Haar cascades for face, eye, and gaze tracking; implemented EAR-based alert triggers and trained a local LBPH classifier on collected data for identity recognition.\n• Monitored 150+ hours of internal checkpoint activity using a real-time AI pipeline, identifying 35+ attention loss events with 88% accuracy, reducing manual supervision and improving response time."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Cartpole-Deep RL-Benchmark-Suite",
+      "description": "• Built a RL pipeline to benchmark REINFORCE, AC, A2C, and PPO on CartPole-v1, using shared hyperparameters and naïve baseline.\n• Applied PPO optimizations (GAE, entropy bonus, ε clipping, mini batches), boosting training speed and reward stability by 2.5× over A2C.\n• Achieved maximum episodic reward (500) within 200K steps, outperforming baseline PPO by 2x and A2C by 3x; reduced training variance by 50%, improving policy robustness and generalization."
+    },
+    {
+      "name": "Flappy-RL-Benchmarks",
+      "description": "• Built a Pygame Flappy Bird environment with varying difficulty to test RL agents.\n• Implemented DQN, DDQN, SAC, and PPO in the environment using prioritized replay, GAE, entropy regularization, and naive baselines, with tuned rewards and adjusted pipe speed to simulate difficulty levels (–6 to –13 pixles/frame).\n• PPO outperformed all agents, achieving a max score of 1200, highest average reward (892), and converging 2 times faster than SAC, demonstrating stable and efficient learning across difficulty settings."
+    },
+    {
+      "name": "Pacman-rangers",
+      "description": "• Built an advanced MCTS agent with heuristic rollouts and biasing multi-agent Pacman Capture the Flag.\n• Implemented ablation study on hyperparameters (rollout depth, Cp, ε), heuristic state evaluations, untried action sorting, and weighted simulations; integrated findings into a “Rainbow” MCTS for optimized end-to-end performance.\n• Achieved a TrueSkill score of 35.6 with the best-performing agent, outperforming baseline MCTS (score: 7.1) and heuristic agents (score: 25.9) in a 700-match tournament, with a 65%+ win rate, demonstrating robust generalization."
+    }
+  ],
+  "certifications": [
+    "Mathematical Biostatistics Boot Camp 1 & 2 by Johns Hopkins University.",
+    "Advanced Linear Models for Data Science 1: Least Squares by Johns Hopkins University."
+  ],
+  "job_preference": "",
+  "visa_required": false
+}

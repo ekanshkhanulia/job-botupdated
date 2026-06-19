@@ -36,7 +36,7 @@ class JobCreate(BaseModel):
 
 
 #step: define the route for the pending jobs
-router.get("/jobs/pending") # GET /jobs/pending: Returns all jobs with status "pending" (uses list_pending_jobs from bot.queue).
+@router.get("/jobs/pending") # GET /jobs/pending: Returns all jobs with status "pending" (uses list_pending_jobs from bot.queue).
 def get_pending_jobs(db:Session=Depends(get_db)):
     """Return all jobs where status is "pending", ordered by created_at."""
     jobs=list_pending_jobs(db)
@@ -89,3 +89,36 @@ def create_job(job:JobCreate,db:Session=Depends(get_db)):
 
     except Exception as e:
         raise HTTPException(status_code=500,detail=f"Failed to create job: {str(e)}")
+
+
+@router.post("jobs/detect") #"/jobs/detect" = the URL path → full URL is http://127.0.0.1:8000/jobs/detect
+def run_job_detector(db:Session=Depends(get_db),
+ # db          = database connection for this request
+    # Session     = SQLAlchemy type (talk to jobs table, credentials table, etc.)
+    # Depends(get_db) = FastAPI opens DB at start of request, closes it when done
+    
+    max_jobs_per_run:int=10,):
+    """
+    Docstring — shows up in /docs as description of this endpoint.
+    Explains: this runs the LinkedIn detector and saves jobs to the DB.
+    """
+
+    result=detect_jobs_from_linkedin(db,max_jobs_per_run=max_jobs_per_run)
+
+
+    if result.get("status")== "missing_linkedin_credentials":
+        raise HTTPException(status_code=400,detail="No LinkedIn credentials saved. POST /credentials first, or log in via session in detector.")
+
+    if result.get("status")== "error":
+        raise HTTPException(status_code=500,detail=result)
+
+    return result
+    #On success, result is a dictionary returned by detect_jobs_from_linkedin() in detector.py. 
+    #Your route in job.py sends that whole dict back as JSON.
+
+#     {
+#   "status": "ok",
+#   "session": { ... },
+#   "notifications": { ... },
+#   "collect": { ... }
+# }
